@@ -26,6 +26,16 @@ export default new Router({
       component: () => import('./views/login/Login')
     },
     {
+      path: '/modify',
+      name: 'modify',
+      component: () => import('./views/my/Modify')
+    },
+    {
+      path: '/suggest',
+      name: 'suggest',
+      component: () => import('./views/my/Suggest')
+    },
+    {
       path: "/",
       redirect: "/home"
     }

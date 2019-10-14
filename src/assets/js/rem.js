@@ -6,6 +6,10 @@
       recalc = function () {
         //clientWidth: 获取对象可见内容的宽度，不包括滚动条，不包括边框
         var clientWidth = docEl.clientWidth;
+        if(clientWidth > 750){
+          docEl.style.fontSize = 75 + "px";
+          return;
+        }
         if (!clientWidth) return;
         docEl.style.fontSize = clientWidth / 7.5 + 'px';  //1rem = 50px;
       };

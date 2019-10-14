@@ -1,6 +1,6 @@
 <template>
   <div class="stat">
-
+    统计
   </div>
 </template>
 
