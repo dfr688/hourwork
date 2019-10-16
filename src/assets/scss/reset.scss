@@ -69,3 +69,80 @@ textarea{
 	border: none;
 	outline: none;
 }
+* { touch-action: pan-y; } 
+
+// tab标签页 折叠面板
+.stat{
+	.van-tabs{
+		.van-tabs__wrap{
+			height: 1.2rem;
+			padding: 0 .8rem;
+		}
+		.van-tab{
+			font-size: .36rem;
+			color: #999;
+			&.van-tab--active{
+				color: #6e51b0;
+				font-size: .4rem;
+			}
+			span{
+				height: 100%;
+				line-height: 1.2rem;
+			}
+		}
+		.van-tabs__line{
+			display: none;
+		}
+	}
+	.van-cell{
+		font-size: .32rem;
+		color: #333;
+	}
+	.van-collapse-item{
+		.van-cell__value{
+			font-size: .42rem!important;
+		}
+		&:first-child{
+			.van-cell__value{
+				color: #ff0303;
+			}
+			.van-icon-gold-coin:before{
+				color: #f33916;
+			}
+		}
+		&:nth-child(3){
+			.van-cell__value{
+				color: #fd9f0b;
+			}
+			.van-icon-gold-coin:before{
+				color: #fd9f0b;
+			}
+		}
+		&:last-child{
+			.van-cell__value{
+				color: #39bdfb;
+			}
+			.van-icon-gold-coin:before{
+				color: #39bdfb;
+			}
+		}
+	}
+}
+// 复选框
+.subsidy{
+	.van-cell{
+		font-size: .32rem;
+		color: #333;
+		padding: 16px;
+		&:not(:last-child)::after{
+			border-bottom: none;
+		}
+		.van-checkbox__icon--checked .van-icon{
+			background: #6e51b0;
+			border-color: #6e51b0;
+		}
+	}
+	.van-hairline--top-bottom::after, .van-hairline-unset--top-bottom::after{
+		border-width: 0;
+	}
+}

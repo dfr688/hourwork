@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+// 解决vue router 报错： Uncaught (in promise) 
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 Vue.use(Router)
 
 export default new Router({
@@ -34,6 +40,16 @@ export default new Router({
       path: '/suggest',
       name: 'suggest',
       component: () => import('./views/my/Suggest')
+    },
+    {
+      path: '/subsidy',
+      name: 'subsidy',
+      component: () => import('./views/stat/Subsidy')
+    },
+    {
+      path: '/deduction',
+      name: 'deduction',
+      component: () => import('./views/stat/Deduction')
     },
     {
       path: "/",

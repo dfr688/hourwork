@@ -17,7 +17,12 @@
             </ul>
         </div>
         <Calendars/>
-      </Swiper>  
+      </Swiper> 
+      <van-popup v-model="show1" position="bottom" round>
+        <div class="wrap">
+          1
+        </div>
+      </van-popup> 
   </div>
 </template>
 
@@ -28,6 +33,7 @@ export default {
  name: "",
   data () {
     return {
+      show1: true
     }
   },
   components: {
@@ -77,6 +83,9 @@ export default {
         }
       }
     }
+  }
+  .wrap{
+    width: 100%;
   }
 }
 </style>

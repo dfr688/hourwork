@@ -32,6 +32,7 @@ export default {
   padding-top: .7rem;
   &.textColor{
     color: #fff;
+    padding-top: .4rem;
   }
   i{
     display: inline-block;
@@ -45,6 +46,7 @@ export default {
     }
     &.white{
       @include background_img("./images/white_back.png");
+      top: .52rem;
     }
   }
 }

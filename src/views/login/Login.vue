@@ -5,37 +5,28 @@
         Hi,欢迎您
       </div>
       <div class="login_register">
-        <swiper :options="swiperOption">
-          <swiper-slide class="slide-1">
-            <span>1</span>
-          </swiper-slide>
-          <swiper-slide class="slide-2">
-            <p>22222</p>
-          </swiper-slide>
-        </swiper>
+        <div class="mid-center">
+          <div class="stack-wrapper">
+            <Stack ref="stack" :stackinit="stackinit"></Stack>
+          </div>
+        </div>
       </div>
   </div>
 </template>
 
 <script>
-import { swiper, swiperSlide } from 'vue-awesome-swiper';
-import 'swiper/dist/css/swiper.css'
+import Stack from './Stack'
 export default {
  name: "",
   data () {
     return {
-      swiperOption: {
-        effect: 'fade',
-				slidesPerView: 'auto',
-				fadeEffect: {
-          crossFade: true,
-        }
-			}
+      stackinit: {
+        visible: 2,
+      }
     }
   },
   components: {
-      swiper,
-			swiperSlide
+     Stack
   },
   computed: {},
   watch: {},
@@ -64,18 +55,19 @@ export default {
       margin-top: .6rem;
     }
     .login_register{
-      span{
-        display: inline-block;
-        background: red;
-        height: 1rem;
-        width: 2rem;
+      height: 1rem;
+      .stack-wrapper{
         margin: 0 auto;
-      }
-      p{
-        background: #000;
-        height: 2rem;
-        width: 3rem;
-        margin: 0 auto;
+        margin-top: .5rem;
+        position: relative;
+        z-index: 1000;
+        width: 6.7rem;
+        height: 9rem;
+        border-radius: .28rem;
+        padding: 0;
+        list-style: none;
+        pointer-events: none;
+        box-shadow: 0px 6px 33px 2px rgba(50, 60, 95, 0.19);
       }
     }
 }
